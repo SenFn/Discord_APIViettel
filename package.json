@@ -10,9 +10,13 @@
   "devDependencies": {
     "typescript": "^4.5.2"
   },
-  "name": "spt",
+  "name": "testing_bot",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": ">= 6.9.4",
+    "npm": ">= 4.4.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
