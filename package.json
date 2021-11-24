@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@discordjs/voice": "^0.7.5",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
+    "libsodium-wrappers": "^0.7.9",
+    "request": "^2.88.2",
+    "wokcommands": "^1.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
