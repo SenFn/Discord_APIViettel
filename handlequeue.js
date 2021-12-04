@@ -4,7 +4,12 @@ const fs = require('fs');
 var timeout = function(bot,message,args,player,queueRead) {
     setTimeout(function () {
         if(player._state.status == "idle"){
-            fs.unlinkSync('./tts/'+queueRead[0].toString()+".mp3");
+		if(queueRead.length == 0) return;
+try {
+  fs.unlinkSync('./tts/'+queueRead[0].toString()+".mp3");
+} catch (error) {
+}
+            
             queueRead.shift();
             if(queueRead.length!=0){                
                 return module.exports.QueueHandle(bot,message,args,player,queueRead);
@@ -30,6 +35,7 @@ module.exports = {
     QueueHandle: async function (bot,message,args,player,queueRead) {
         if(player.state.status == "idle"){
             //khi player dang idle
+if(message.member.voice.channel.id == null) return;
             const connection = joinVoiceChannel({
                 channelId: message.member.voice.channel.id,
                 guildId: message.guild.id,
