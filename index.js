@@ -44,6 +44,7 @@ fs.readdir("./commands/", (err, files)=>{
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
+  client.user.setActivity("Mấy em gái chên fây búc...",{type:"WATCHING"}); 
 });
 
 client.on('voiceStateUpdate', (oldState, newState) => {
@@ -77,7 +78,7 @@ client.on('messageCreate', async message => {
   
   let messageArray = message.content.split(" ");
 
-  if(messageArray[0].slice(0,1) == prefix){
+  if(messageArray[0].slice(0,prefix.length) == prefix){
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let commandfile = Client.commands.get(cmd.slice(prefix.length));
